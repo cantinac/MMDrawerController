@@ -18,18 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <QuartzCore/QuartzCore.h>
 
 #import "MMExampleCenterTableViewController.h"
 #import "MMExampleDrawerVisualStateManager.h"
+
+#if (TARGET_OS_IPHONE && \
+(__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_1) )
+#import <MMDrawer/MMDrawer.h>
+#else
 #import "UIViewController+MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
+#endif
+
 #import "MMLogoView.h"
 #import "MMCenterTableViewCell.h"
 #import "MMExampleLeftSideDrawerViewController.h"
 #import "MMExampleRightSideDrawerViewController.h"
 #import "MMNavigationController.h"
-
-#import <QuartzCore/QuartzCore.h>
 
 typedef NS_ENUM(NSInteger, MMCenterViewControllerSection){
     MMCenterViewControllerSectionLeftViewState,

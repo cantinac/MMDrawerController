@@ -17,8 +17,19 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-#import "MMNavigationController.h"
+
+#import <Availability.h>
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+
+#if (TARGET_OS_IPHONE && \
+(__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_1) )
+#import <MMDrawer/MMDrawer.h>
+#else
 #import "UIViewController+MMDrawerController.h"
+#endif
+
+#import "MMNavigationController.h"
 
 @interface MMNavigationController ()
 

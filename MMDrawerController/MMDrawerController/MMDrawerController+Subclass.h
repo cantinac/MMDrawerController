@@ -18,7 +18,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#if (TARGET_OS_IPHONE && \
+(__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_1) )
+#import <MMDrawer/MMDrawer.h>
+#else
 #import "MMDrawerController.h"
+#endif
 
 /**
  This class extension is designed for use by subclasses of `MMDrawerController` to customize the functionality to support a specific use-case by a developer. When importing this file, there is no need to also call `#import MMDrawerController.h`.

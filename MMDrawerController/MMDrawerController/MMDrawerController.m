@@ -18,11 +18,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <Availability.h>
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
+#if (TARGET_OS_IPHONE && \
+    (__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_1) )
+#import <MMDrawer/MMDrawer.h>
+#else
 #import "MMDrawerController.h"
 #import "UIViewController+MMDrawerController.h"
+#endif
 
-#import <QuartzCore/QuartzCore.h>
 
 CGFloat const MMDrawerDefaultWidth = 280.0f;
 CGFloat const MMDrawerDefaultAnimationVelocity = 840.0f;

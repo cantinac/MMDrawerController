@@ -18,17 +18,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <QuartzCore/QuartzCore.h>
 
 #import "MMAppDelegate.h"
+
+#if (TARGET_OS_IPHONE && \
+(__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_1) )
+#import <MMDrawer/MMDrawer.h>
+#else
 #import "MMDrawerController.h"
+#import "MMDrawerVisualState.h"
+#endif
+
 #import "MMExampleCenterTableViewController.h"
 #import "MMExampleLeftSideDrawerViewController.h"
 #import "MMExampleRightSideDrawerViewController.h"
-#import "MMDrawerVisualState.h"
 #import "MMExampleDrawerVisualStateManager.h"
 #import "MMNavigationController.h"
 
-#import <QuartzCore/QuartzCore.h>
 
 @interface MMAppDelegate ()
 @property (nonatomic,strong) MMDrawerController * drawerController;

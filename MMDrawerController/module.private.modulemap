@@ -1,0 +1,3 @@
+explicit framework module MMDrawer.Private {
+    header "MMDrawerController+Subclass.h"
+}

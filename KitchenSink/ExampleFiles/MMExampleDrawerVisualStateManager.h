@@ -20,7 +20,13 @@
 
 
 #import <Foundation/Foundation.h>
+
+#if (TARGET_OS_IPHONE && \
+(__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_1) )
+#import <MMDrawer/MMDrawer.h>
+#else
 #import "MMDrawerVisualState.h"
+#endif
 
 typedef NS_ENUM(NSInteger, MMDrawerAnimationType){
     MMDrawerAnimationTypeNone,

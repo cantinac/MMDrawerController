@@ -20,8 +20,16 @@
 
 
 #import <UIKit/UIKit.h>
+
+#if (TARGET_OS_IPHONE && \
+(__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_1) )
+#import <MMDrawer/MMDrawer.h>
+#else
 #import "UIViewController+MMDrawerController.h"
+#endif
+
 #import "MMExampleViewController.h"
+
 
 typedef NS_ENUM(NSInteger, MMDrawerSection){
     MMDrawerSectionViewSelection,
